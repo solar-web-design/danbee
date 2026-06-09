@@ -105,10 +105,12 @@
   .platform .head h2 em{font-family:var(--serif-en);font-style:italic;color:var(--sunrise)}
   .platform .head p{margin-top:22px;font-size:16px;line-height:1.9;color:var(--ink-soft);max-width:620px}
   .pf-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-left:1px solid var(--line)}
-  .pf-card{padding:clamp(40px,4vw,56px) clamp(32px,3.4vw,52px) clamp(44px,5vw,60px);border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper);transition:background .4s var(--ease)}
+  .pf-card{border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper);transition:background .4s var(--ease);overflow:hidden}
   .pf-card:hover{background:var(--paper-2)}
-  .pf-diagram{height:150px;color:var(--ink);display:flex;align-items:center;margin-bottom:32px;border-bottom:1px solid var(--line);padding-bottom:26px}
-  .pf-diagram svg{height:128px;width:auto;overflow:visible}
+  .pf-media{overflow:hidden;aspect-ratio:16/10}
+  .pf-media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.1s var(--ease)}
+  .pf-card:hover .pf-media img{transform:scale(1.05)}
+  .pf-body{padding:clamp(36px,3.6vw,52px) clamp(32px,3.4vw,52px) clamp(44px,5vw,58px)}
   .pf-card .ch{font-family:var(--serif-en);font-style:italic;font-size:30px;color:var(--line)}
   .pf-card .en{display:block;font-family:var(--sans-en);font-size:11.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--sage);margin:12px 0 8px}
   .pf-card h3{font-family:var(--serif-kr);font-weight:600;font-size:clamp(23px,2.8vw,32px);letter-spacing:-.01em}
@@ -294,51 +296,32 @@
     </div>
     <div class="pf-grid">
       <div class="pf-card reveal">
-        <div class="pf-diagram">
-          <svg viewBox="0 0 250 140" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
-            <line x1="125" y1="70" x2="38" y2="28"/>
-            <line x1="125" y1="70" x2="30" y2="110"/>
-            <line x1="125" y1="70" x2="212" y2="30"/>
-            <line x1="125" y1="70" x2="220" y2="108"/>
-            <line x1="125" y1="70" x2="125" y2="13"/>
-            <rect x="28" y="18" width="20" height="20"/>
-            <circle cx="30" cy="110" r="10"/>
-            <rect x="202" y="20" width="20" height="20"/>
-            <circle cx="220" cy="108" r="10"/>
-            <rect x="115" y="3" width="20" height="20"/>
-            <circle cx="125" cy="70" r="24" fill="#F4F1EA" stroke="#E08A3C" stroke-width="1.6"/>
-            <text x="125" y="74" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="12" font-weight="700" fill="#E08A3C" stroke="none">VPP</text>
-          </svg>
+        <div class="pf-media"><img src="./img/vpp.jpg" alt="ESS·변전소·태양광이 송전망으로 연결된 가상발전소 인프라 항공 전경" /></div>
+        <div class="pf-body">
+          <span class="ch">04</span>
+          <span class="en">Virtual Power Plant</span>
+          <h3>VPP 가상발전소</h3>
+          <p>흩어진 태양광·ESS 등 소규모 분산자원을 하나로 묶어 통합 제어하고, 전력시장에서 하나의 발전소처럼 거래합니다.</p>
+          <ul>
+            <li>분산자원(DER) 통합 관리·제어</li>
+            <li>발전량 예측 기반 시장 입찰</li>
+            <li>실시간 모니터링·자동 정산</li>
+          </ul>
         </div>
-        <span class="ch">04</span>
-        <span class="en">Virtual Power Plant</span>
-        <h3>VPP 가상발전소</h3>
-        <p>흩어진 태양광·ESS 등 소규모 분산자원을 하나로 묶어 통합 제어하고, 전력시장에서 하나의 발전소처럼 거래합니다.</p>
-        <ul>
-          <li>분산자원(DER) 통합 관리·제어</li>
-          <li>발전량 예측 기반 시장 입찰</li>
-          <li>실시간 모니터링·자동 정산</li>
-        </ul>
       </div>
       <div class="pf-card reveal d1">
-        <div class="pf-diagram">
-          <svg viewBox="0 0 250 140" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <line x1="16" y1="124" x2="238" y2="124"/>
-            <path d="M16 104 C 48 104 64 96 86 84 C 104 74 112 40 128 40 C 146 40 156 74 176 86 C 198 99 214 104 238 104" stroke-width="1.6"/>
-            <path d="M100 70 C 112 64 144 64 156 70" stroke="#E08A3C" stroke-width="1.6" stroke-dasharray="4 4"/>
-            <line x1="128" y1="44" x2="128" y2="64" stroke="#E08A3C" stroke-width="1.6"/>
-            <path d="M122.5 58 L128 65 L133.5 58" stroke="#E08A3C" stroke-width="1.6"/>
-          </svg>
+        <div class="pf-media"><img src="./img/dr.jpg" alt="도시 야경과 송전탑 — 전력 수요와 전력망" /></div>
+        <div class="pf-body">
+          <span class="ch">05</span>
+          <span class="en">Demand Response</span>
+          <h3>DR 수요반응</h3>
+          <p>전력이 부족한 피크 시간, 아낀 전기를 자원으로 거래합니다. 수요 감축량을 모아 전력시장에 판매하는 수요자원 사업입니다.</p>
+          <ul>
+            <li>수요자원 모집·등록 관리</li>
+            <li>피크 감축 자동 제어</li>
+            <li>전력거래소 DR 시장 참여</li>
+          </ul>
         </div>
-        <span class="ch">05</span>
-        <span class="en">Demand Response</span>
-        <h3>DR 수요반응</h3>
-        <p>전력이 부족한 피크 시간, 아낀 전기를 자원으로 거래합니다. 수요 감축량을 모아 전력시장에 판매하는 수요자원 사업입니다.</p>
-        <ul>
-          <li>수요자원 모집·등록 관리</li>
-          <li>피크 감축 자동 제어</li>
-          <li>전력거래소 DR 시장 참여</li>
-        </ul>
       </div>
     </div>
   </div>
